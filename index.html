@@ -13,31 +13,43 @@
 </head>
 <body>
     <h1>SPLITTER</h1>
-    <section>
-        <div>
-            <label>Bill</label>
-            <input type="text" placeholder="0">
-        </div>
-        <div>
-            <label for="button">Select Tip %</label>
-            <button>5%</button>
-            <button>10%</button>
-            <button>15%</button>
-            <button>25%</button>
-            <button>50%</button>
-        </div>
-        <div>
-            <label>Number of People</label>
-            <input type="text" placeholder="0">
-        </div>
-    </section>
-    <section>
-        <div>
-            <p>Tip Amount / person</p>
-            <p>Total / person</p>
-            <button>Reset</button>
-        </div>
-    </section>
+    <div class="wrapper-body">
+        <section>
+            <div class="bill">
+                <label class="dark-grey-text">Bill</label>
+                <br>
+                <input type="text" placeholder="0">
+            </div>
+            <div class="tip-class">
+                <label class="dark-grey-text" for="button">Select Tip %</label>
+                <br>
+                <div class="wrapper-tip">
+                        <button class="tip-btn">5%</button>
+                        <button class="tip-btn">10%</button>
+                        <button class="tip-btn">15%</button>
+                        <button class="tip-btn">25%</button>
+                        <button class="tip-btn">50%</button>
+                        <button class="cust-btn">Custom</button> 
+                </div>
+                
+            </div>
+            <div class="num-people">
+                <label class="dark-grey-text">Number of People</label>
+                <br>
+                <input type="text" placeholder="0">
+            </div>
+        </section>
+        <section>
+            <div id="total" class="wrapper-total">
+                <p class="tip-am grey-text"><span>Tip Amount </span><br><span>/ person</span></p>
+                <p class="total-am grey-text"><span>Total </span><br><span>/ person</span></p>
+                <p class="tip-value"></p>
+                <p class="total-value"></p>
+                <button>Reset</button>
+            </div>
+        </section>
+    </div>
+    
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="https://github.com/tariqanthonysmith">Tariq Smith</a>.

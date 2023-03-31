@@ -13,5 +13,120 @@
     --Light-grayish-cyan: hsl(185, 41%, 84%);
     --Very-light-grayish-cyan: hsl(189, 41%, 97%);
     --White: hsl(0, 0%, 100%);
+
+}
+
+body {
+    background-color: var(--Light-grayish-cyan);
+    text-align: center;
+    font-size: 24px;
     
 }
+
+.wrapper-body {
+    background-color: var(--White);
+    display: grid;
+    grid-template-rows: 1fr, 3fr, 1fr, 3fr;
+    grid-template-columns: auto;
+}
+
+.dark-grey-text {
+    color: var(--Dark-grayish-cyan);
+}
+
+/* Bill Section */
+
+.bill {
+    grid-row: 1/2;
+    
+}
+
+
+.bill input {
+    background-color: var(--Very-light-grayish-cyan);
+    
+}
+
+
+/* Tip Section */
+
+.tip-class {
+    grid-row: 2/5;
+    
+}
+
+.wrapper-tip {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+}
+
+.wrapper-tip button {
+    grid-template-columns: 1fr, 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+}
+
+.tip-btn {
+    background-color: var(--Very-dark-cyan);
+}
+
+.cust-btn {
+    background-color: var(--Very-light-grayish-cyan);
+    color: var(--Dark-grayish-cyan);
+}
+
+/* Number of People Section */
+
+.num-people {
+    grid-row: 5/6;
+    
+}
+
+.num-people input {
+    background-color: var(--Very-light-grayish-cyan);
+    
+}
+
+/* Total Section */
+
+#total {
+    background-color: var(--Very-dark-cyan);
+    grid-row: 6/ 9;
+}
+
+.wrapper-total {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.tip-am {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    text-align: left;
+}
+
+.total-am {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    text-align: left;
+}
+
+.tip-value {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.total-value {
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+#total button {
+    grid-column: 1/3;
+    grid-row: 3/4;
+    
+}
+
+
