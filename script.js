@@ -5,6 +5,7 @@ const totalPerPerson = document.querySelector(".total-value")
 const tipBtns = document.querySelectorAll(".tip-btn")
 const customTipBtn = document.querySelector(".cust-btn")
 const resetBtn = document.querySelector(".reset-btn")
+const error = document.querySelector(".error")
 
 billInput.addEventListener("input", billInputFun);
 numOfPeopleInput.addEventListener("input", peopleInputFun);
@@ -30,7 +31,16 @@ function billInputFun() {
 
 function peopleInputFun() {
     peopleValue = parseFloat(numOfPeopleInput.value)
-    tipCalculation()
+    
+
+    if (peopleValue < 1) {
+        error.style.display = "visable"
+        numOfPeopleInput.style.border = "thick solid red"
+    } else {
+        error.style.display = "none"
+        numOfPeopleInput.style.border = "none"
+        tipCalculation()
+    }
 }
 
 function tipInputFun () {
@@ -56,15 +66,18 @@ function handleClick(event) {
 function tipCalculation() {
     if (peopleValue >= 1) {
         let tipAmount = (billValue * tipValue) / peopleValue;
-        let total = (billValue * tipAmount) / peopleValue;
+        let total = (billValue + tipAmount) / peopleValue;
         tipPerPerson.innerHTML = "$" + tipAmount.toFixed(2);
         totalPerPerson.innerHTML = "$" + total.toFixed(2);
     }
 }
 
 function reset () {
-    billInput.value = "0.00"
+    billInput.value = "0.0"
+    billInputFun()
     numOfPeopleInput.value = "1";
+    peopleInputFun()
+    customTipBtn.value = ""
     tipPerPerson.innerHTML = "$" + (0.00).toFixed(2);
     totalPerPerson.innerHTML = "$" + (0.00).toFixed(2);
 }
