@@ -259,10 +259,6 @@
         color: var(--Very-dark-cyan);
         background-color: var(--Strong-cyan);
     }
-
-    .reset-btn:focus {
-        background-color: var(--Cyan);
-    }
 }
 
 
