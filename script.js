@@ -1,52 +1,65 @@
-function init () {
-    const billInput = document.querySelector(".bill-input").value;
-    const tipBtn5pc = document.querySelector(".tip-btn1");
-    const tipBtn10pc = document.querySelector(".tip-btn2");
-    const tipBtn15pc = document.querySelector(".tip-btn3");
-    const tipBtn25pc = document.querySelector(".tip-btn4");
-    const tipBtn50pc = document.querySelector(".tip-btn5");
-    const customTipBtn = document.querySelector(".cust-btn").value;
-    const numOfPeopleInput = document.querySelector(".num-of-people-input").value;
-    const tipAmountOutput = document.querySelector(".tip-value").innerHTML;
-    const tipTotalOutput = document.querySelector(".total-value").innerHTML;
-    const resetBtn =document.querySelector(".reset-btn");
+const tipBtns = document.querySelectorAll(".tip-btn");
+let customTipBtn = document.querySelector(".cust-btn");
+let billInput = document.querySelector(".bill-input");
+let numOfPeopleInput = document.querySelector(".num-of-people-input");
+const tipAmountOutput = document.querySelector(".output-1");
+const tipTotalOutput = document.querySelector(".output-2");
+const resetBtn =document.querySelector(".reset-btn");
 
-    console.log(tipBtn5pc)
-    console.log(tipTotalOutput) 
+let billValue = 0;
+let NumOfPeople = 1;
+let tipValue = 1;
 
-    let currentBill = 0;
-    let currentPeople = "";
-    let tipAmount = 1;
+tipBtns.forEach(function(tipBtn) {
+    tipBtn.addEventListener("Click", tipBtnsClick);
+})
 
-    tipBtn5pc.addEventListener("Click", () => {
-        let tipAmount = 0.05;
-        tipTotalOutput = "Hello World";
+function tipBtnsClick(event) {
+    tipBtns.forEach((tipBtn) => {
+      tipBtn.classList.remove('active');
+      if (event.target.innerHTML === tipBtn.innerHTML) {
+        btn.classList.add('active');
+        tipValue = parseFloat(btn.innerHTML) / 100;
+      }
     });
-
-    tipBtn10pc.addEventListener("Click", () => {
-        tipAmount = 0.1;
-        console.log(tipAmount)
-    })
-
-    tipBtn15pc.addEventListener("Click", () => {
-        tipAmount = 0.15;
-    })
-
-    tipBtn25pc.addEventListener("Click", () => {
-        tipAmount = 0.25;
-    })
-
-    tipBtn50pc.addEventListener("Click", () => {
-        tipAmount = 0.5;
-    })
+    customTip.value = '';
+    calculate();
 }
 
-function isNumber(input) {
+customTipBtn.addEventListener("input")
 
-    return /^[0-9]+$/.test(input);
+
+customTipBtn.addEventListener("change", tipCalculation);
+
+
+billInput.addEventListener("change", tipCalculation);
+
+
+numOfPeopleInput.addEventListener("change", tipCalculation);
+
+function tipCalculation() {
+
+    let bill = parseFloat(billInput.value);
+    let numberOfPeople = parseInt(numOfPeopleInput.value);
+    let tipPecent = 1;
+    if (tipBtn === tipBtns[0]) {
+        let
+    }
+    
+    billInput.value = bill.toFixed(2);
+    
 }
 
-init ();
+
+     
+
+// const tipBtn5pc = document.querySelector(".tip-btn1");
+// const tipBtn10pc = document.querySelector(".tip-btn2");
+// const tipBtn15pc = document.querySelector(".tip-btn3");
+// const tipBtn25pc = document.querySelector(".tip-btn4");
+// const tipBtn50pc = document.querySelector(".tip-btn5");
+    
+
 
 
 
