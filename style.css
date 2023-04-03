@@ -9,6 +9,7 @@
 
 :root {
     --Strong-cyan: hsl(172, 67%, 45%);
+    --Cyan: hsl(171, 77%, 66%);
     --Very-dark-cyan: hsl(183, 100%, 15%);
     --Dark-grayish-cyan: hsl(186, 14%, 43%);
     --Grayish-cyan: hsl(184, 14%, 56%);
@@ -127,6 +128,11 @@
         font-family: var(--mono);
         border: none;
         color: var(--Very-light-grayish-cyan);
+    }
+
+    .tip-btn:focus {
+        color: var(--Very-dark-cyan);
+        background-color: var(--Cyan);
     }
     
     .cust-btn {
@@ -253,6 +259,10 @@
         color: var(--Very-dark-cyan);
         background-color: var(--Strong-cyan);
     }
+
+    .reset-btn:focus {
+        background-color: var(--Cyan);
+    }
 }
 
 
@@ -278,6 +288,7 @@
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;
         border-radius: 1rem;
+        
     }
     
     .dark-grey-text {
@@ -409,12 +420,10 @@
     
     .wrapper-total {
         
-        
-        grid-column-start: 2;
-        grid-column-end: 3;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: repeat(3, 1fr);
+        grid-column: 2/3;
         margin-left: 1.5rem;
         margin-right: 1.5rem;
         border-radius: 0.5rem;
