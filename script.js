@@ -6,27 +6,34 @@ const tipAmountOutput = document.querySelector(".output-1");
 const tipTotalOutput = document.querySelector(".output-2");
 const resetBtn =document.querySelector(".reset-btn");
 
+let tipValue = 100;
 let billValue = 0;
 let NumOfPeople = 1;
-let tipValue = 1;
+
 
 tipBtns.forEach(function(tipBtn) {
-    tipBtn.addEventListener("Click", tipBtnsClick);
+    tipBtn.addEventListener("Click", function tipBtnsClick(e) {
+        tipBtns.forEach((tipBtn) => {
+            tipBtn.classList.remove('active');
+            if (e.target.innerHTML === tipBtn.innerHTML) {
+              btn.classList.add('active');
+              tipValue = parseFloat(btn.innerHTML) / 100;
+            }
+          });
+          customTipBtn.value = '';
+          tipCalculation();
+    });
 })
 
-function tipBtnsClick(event) {
+customTipBtn.addEventListener("input", function custTipBtnClick(e){
+    tipValue = parseFloat(customTipBtn.value) / 100;
     tipBtns.forEach((tipBtn) => {
-      tipBtn.classList.remove('active');
-      if (event.target.innerHTML === tipBtn.innerHTML) {
-        btn.classList.add('active');
-        tipValue = parseFloat(btn.innerHTML) / 100;
-      }
+    tipBtn.classList.remove('active');
     });
-    customTip.value = '';
-    calculate();
-}
-
-customTipBtn.addEventListener("input")
+    if (customTipBtn.value !== '') {
+    tipCalculation();
+    }
+})
 
 
 customTipBtn.addEventListener("change", tipCalculation);
